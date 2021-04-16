@@ -3,7 +3,32 @@
 <body>
 <h1>Sort examples</h1>
 <h2>Selection Sort</h2>
+<code>
+from typing import MutableSequence
 
+def swap(array: MutableSequence, index1: int, index2: int): # A helpful function for swapping values in an array.
+    # Since in selection sort we do a lot of swapping, but swapping requires a bunch of code and can be summed up in a single English word,
+    # I wrote this function to swap things to improve the readability of the code
+    if index2 == index1: # If we're swapping something with itself, do nothing
+        return
+    if index2 < index1: # If the indexes are out of order, fix them
+        index1, index2 = index2, index1 # Python is nice and you can do this to swap two variables
+    elem2 = array.pop(index2) # Remove the element at index2 and store it temporarily in elem2
+    elem1 = array.pop(index1) # Remove the element at index1 and store it temporarily in elem1
+    array.insert(index1, elem2) # Insert what used to be at index2 to index1
+    array.insert(index2, elem1) # Insert what used to be at index1 to index2
+
+
+def RileySelectionSort(array: MutableSequence):
+    startIndex = 1 # Initialize startIndex to 1
+    while startIndex != len(array): # Run this loop until startIndex is past the end of the list
+        minimum = startIndex-1 # The current minimum value always starts as the value at the end of the sorted part of the list
+        for i in range(startIndex, len(array)): # Loop over the indexes between the start index and the end of the array
+            if array[i] < array[minimum]: # Check if the value at i is less than the value at minimum
+                minimum = i # If so, i is the new minimum
+        swap(array, startIndex-1, minimum) # Swap the indexes (if we don't need to swap this will do nothing, so we won't add any if statements to keep things clean)
+        startIndex += 1 # Increment the startIndex
+</code>
 
 </body>
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Riley's Neat Things</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://rilazy.github.io/" property="cc:attributionName" rel="cc:attributionURL">Riley McCabe</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
