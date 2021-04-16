@@ -1,5 +1,10 @@
 code {
-    background-color: darkgray;
     padding: auto;
     white-space:pre-wrap;
+}
+
+div {
+    background-color: darkgray;
+    stroke-width: 20;
+    stroke: black;
 }

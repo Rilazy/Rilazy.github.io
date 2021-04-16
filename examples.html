@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="./codestyle.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 </head>
 <body>
 <h1>Sort examples</h1>
 <h2>Selection Sort</h2>
-<code>
+<pre><code class="Python">
 from typing import MutableSequence
 
 def swap(array: MutableSequence, index1: int, index2: int): # A helpful function for swapping values in an array.
@@ -31,8 +33,7 @@ def RileySelectionSort(array: MutableSequence):
                 minimum = i # If so, i is the new minimum
         swap(array, startIndex-1, minimum) # Swap the indexes (if we don't need to swap this will do nothing, so we won't add any if statements to keep things clean)
         startIndex += 1 # Increment the startIndex
-</code>
-
+</code></pre>
 </body>
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Riley's Neat Things</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://rilazy.github.io/" property="cc:attributionName" rel="cc:attributionURL">Riley McCabe</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </html>
