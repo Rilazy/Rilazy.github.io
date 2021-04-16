@@ -1,5 +1,5 @@
 code {
     background-color: darkgray;
     padding: auto;
-    white-space: normal;
+    white-space:pre-wrap;
 }
